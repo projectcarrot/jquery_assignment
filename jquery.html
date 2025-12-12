@@ -11,7 +11,22 @@
         <br/>
         <input type="checkbox" id="c1" name="hobbies" value="music" checked>Music<br/>
         <input type="checkbox" id="c1" name="hobbies" value="games" checked>Games<br/>
+        <button id="submit">Submit</button>
     </div>
+    <div class="modal fade" id="modal01" tabindex="-1" role="dialog" aria-labelledby="modal01Label" aria-hidden="true" data-bs-backdrop="static"> 
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <div class="flex">
+                            Welcome to the lonely body dialog!!
+                        </div>
+                        <button class="flex btn btn-primary mt-3">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
       $(document).ready(function () {
@@ -30,7 +45,11 @@
         console.log("h1 checked = ", hobby1Check);
         console.log("h2 checked = ", hobby2Check);
         $(hobbyCB[1]).prop("checked", true);
-        t1.css("border-color","red"); 
+        t1.css("color","red");
+        $("#submit").on("click", function(event) {
+            console.log("btn clicked..");
+            $("#add-user-model").model('show');
+        });
       });
     </script>
   </body>
